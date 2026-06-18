@@ -1,39 +1,50 @@
 <style>
-  .mode-landscape .sl-cover-layout { display: flex; flex-direction: row; align-items: stretch; min-height: 100%; }
-  .mode-landscape .sl-content-panel { width: 55%; display: flex; flex-direction: column; justify-content: center; }
-  .mode-landscape .sl-image-panel { width: 45%; min-height: 0; }
-  .mode-portrait .sl-cover-layout { display: flex; flex-direction: column; min-height: 100%; }
-  .mode-portrait .sl-content-panel { flex: 1; display: flex; flex-direction: column; justify-content: center; padding-bottom: 1.5rem; }
-  .mode-portrait .sl-image-panel { min-height: 280px; flex-shrink: 0; }
+.mode-landscape .sl-layout { flex-direction: row; }
+.mode-portrait .sl-layout { flex-direction: column; }
+.mode-landscape .sl-content { width: 55%; }
+.mode-landscape .sl-visual { flex: 1; }
+.mode-portrait .sl-content { width: 100%; flex: 1; }
+.mode-portrait .sl-visual { width: 100%; height: 38%; }
 </style>
-<section class="w-full h-full overflow-auto bg-white">
-  <div class="sl-cover-layout h-full">
-    <div class="sl-content-panel px-10 py-12">
-      <div class="flex flex-col justify-between h-full">
-        <div>
-          <p class="text-sm font-medium tracking-widest uppercase mb-6" style="color:#E91E63;">Florist Shop Owner</p>
-          <h1 class="text-5xl font-bold text-slate-900 leading-tight mb-6">Fresh Blooms, Perfect Orders</h1>
-          <p class="text-xl text-slate-600 leading-relaxed max-w-md mb-6">Floristry inventory and delivery management platform designed to minimize spoilage, streamline orders, and ensure every arrangement arrives on time.</p>
-          <div class="inline-flex items-center gap-3 border rounded-lg px-4 py-3" style="background-color:#FFC0CB; border-color:#E91E6340;">
-            <div class="w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0" style="background-color:#E91E63;">
-              <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
-              </svg>
-            </div>
-            <span class="text-sm font-medium px-1" style="color:#ffffff;">Core vision: Simplified productivity</span>
 
-          </div>
+<section class="w-full h-full overflow-auto bg-white">
+  <div class="sl-layout flex h-full">
+
+    <!-- Left: content column -->
+    <div class="sl-content flex flex-col justify-between p-12">
+      <div>
+        <div class="flex items-center gap-2 mb-8">
+          <div class="w-10 h-0.5 bg-emerald-500"></div>
+          <span class="text-emerald-600 text-xs font-bold tracking-widest uppercase">Florist Operations Platform</span>
         </div>
-        <div class="mt-auto pt-8">
-          <data-attribution />
+        <h1 class="text-5xl font-black text-emerald-900 leading-tight mb-5">
+          Every stem.<br/>Every order.<br/>Delivered fresh.
+        </h1>
+        <p class="text-base text-slate-600 leading-relaxed" style="max-width: 22rem;">
+          The operations hub that helps florist shop owners minimize spoilage, manage bouquet orders, and keep every delivery on time — without the spreadsheet chaos.
+        </p>
+      </div>
+
+      <div>
+        <div class="flex flex-wrap gap-2 mb-8">
+          <span class="px-3 py-1 bg-emerald-100 text-emerald-800 text-xs font-semibold rounded-full">Inventory</span>
+          <span class="px-3 py-1 bg-rose-100 text-rose-700 text-xs font-semibold rounded-full">Orders</span>
+          <span class="px-3 py-1 bg-sky-100 text-sky-700 text-xs font-semibold rounded-full">Deliveries</span>
+          <span class="px-3 py-1 bg-amber-100 text-amber-800 text-xs font-semibold rounded-full">Spoilage Prevention</span>
         </div>
+        <data-attribution />
       </div>
     </div>
-    <div class="sl-image-panel relative overflow-hidden">
-      <div class="absolute inset-0" style="background:linear-gradient(135deg, #E91E63, #E91E6320);"></div>
-      <div class="absolute inset-0 flex items-center justify-center p-8">
-        <img src="http://qb-be-deck.quantumbyte:9999/common/image-generation?prompt=colorful+fresh+flowers+in+a+florist+shop+with+organized+shelving+and+delivery+boxes&amp;keyspace=juox2dbr&amp;user_id=4769" alt="cover" class="max-w-full max-h-full object-contain drop-shadow-2xl rounded-2xl" />
-      </div>
+
+    <!-- Right: image -->
+    <div class="sl-visual relative overflow-hidden">
+      <img
+        src="https://api.qb-deck.quantumbyte.ai/common/image-generation?prompt=professional%20florist%20carefully%20arranging%20fresh%20pink%20roses%20and%20white%20blooms%20on%20a%20wooden%20workbench%2C%20bright%20airy%20shop%2C%20natural%20warm%20light%2C%20editorial%20photography%2C%20lush%20greens%20and%20pinks"
+        alt="Florist arranging fresh flowers"
+        class="w-full h-full object-cover"
+      />
+      <div class="absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-white to-transparent"></div>
     </div>
+
   </div>
 </section>
